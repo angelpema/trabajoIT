@@ -7,9 +7,44 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarCamarero</param>
+                <param name = "actionName">listarCategoria</param>
             </result>     
         </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ____________________________CATEGORIA___________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarCategoria" class = "controller.CategoriaAction">
+            <result name = "success">/vistas/categoria/categoria.jsp</result>
+        </action>
+        
+        <action name="altaCategoria" class="controller.CategoriaAction" method="altaCategoria">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarCategoria</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/categoria/altaCategoria.jsp</result>
+        </action>
+        
+        <action name="eliminarCategoria" class="controller.CategoriaAction" method="eliminarCategoria">
+            <result name="success" type="redirectAction">listarCategoria</result>
+        </action>
+        
+        <action name="modificarCategoria" class="controller.CategoriaAction" method="modificarCategoria">
+            <result name="success">/vistas/categoria/modificarCategoria.jsp</result>
+        </action>
+        
+        <action name="modificarCategoriaGuardar" class="controller.CategoriaAction" method="modificarCategoriaGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarCategoria</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ____________________________CAMARERO____________________________________ -->
+        <!-- ________________________________________________________________________ -->
         
         <action name = "listarCamarero" class = "controller.CamareroAction">
             <result name = "success">/vistas/camarero/camarero.jsp</result>
@@ -27,7 +62,6 @@
             <result name="success" type="redirectAction">listarCamarero</result>
         </action>
         
-        
         <action name="modificarCamarero" class="controller.CamareroAction" method="modificarCamarero">
             <result name="success">/vistas/camarero/modificarCamarero.jsp</result>
         </action>
@@ -38,7 +72,6 @@
                 <param name="namespace">/</param>
             </result>
         </action>
-        
         
     </package>
 </struts>

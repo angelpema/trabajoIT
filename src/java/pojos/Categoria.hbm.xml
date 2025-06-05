@@ -11,11 +11,6 @@
         <property name="nombre" type="string">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="icono" type="string">
-            <column name="icono" length="20">
-                <comment>Icono de categoria</comment>
-            </column>
-        </property>
         <set name="platos" table="plato" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="categoria_id" />

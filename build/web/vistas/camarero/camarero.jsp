@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Resultados</title>
+        <title>Camareros</title>
     </head>
     <body>
         <h1>Camareros</h1>
