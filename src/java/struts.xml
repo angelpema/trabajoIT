@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarMesa</param>
+                <param name = "actionName">listarIngrediente</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ____________________________INGREDIENTE_________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarIngrediente" class = "controller.IngredienteAction">
+            <result name = "success">/vistas/ingrediente/ingrediente.jsp</result>
+        </action>
+        
+        <action name="altaIngrediente" class="controller.IngredienteAction" method="altaIngrediente">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/ingrediente/altaIngrediente.jsp</result>
+        </action>
+        
+        <action name="eliminarIngrediente" class="controller.IngredienteAction" method="eliminarIngrediente">
+            <result name="success" type="redirectAction">listarIngrediente</result>
+        </action>
+        
+        <action name="modificarIngrediente" class="controller.IngredienteAction" method="modificarIngrediente">
+            <result name="success">/vistas/ingrediente/modificarIngrediente.jsp</result>
+        </action>
+        
+        <action name="modificarIngredienteGuardar" class="controller.IngredienteAction" method="modificarIngredienteGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->
