@@ -34,5 +34,9 @@
 
             <s:submit value="Guardar"/>
         </s:form>
+        
+        <s:form action="listarCamarero">
+            <s:submit value="Volver"/>
+        </s:form>
     </body>
 </html>
