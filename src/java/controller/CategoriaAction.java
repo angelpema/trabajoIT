@@ -49,7 +49,7 @@ public class CategoriaAction extends ActionSupport {
     }
 
     public String modificarCategoria() {
-        categoria = categoriaDAO.consultarCamarero(id);
+        categoria = categoriaDAO.consultarCategoria(id);
         return SUCCESS;
 
     }

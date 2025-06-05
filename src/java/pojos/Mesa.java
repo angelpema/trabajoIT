@@ -24,6 +24,7 @@ public class Mesa  implements java.io.Serializable {
     public Mesa(String ubicacion, int capacidad) {
         this.ubicacion = ubicacion;
         this.capacidad = capacidad;
+        this.estado="libre";
     }
     public Mesa(String ubicacion, int capacidad, String estado, Set pedidos) {
        this.ubicacion = ubicacion;

@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarCategoria</param>
+                <param name = "actionName">listarMesa</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- _______________________________MESA_____________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarMesa" class = "controller.MesaAction">
+            <result name = "success">/vistas/mesa/mesa.jsp</result>
+        </action>
+        
+        <action name="altaMesa" class="controller.MesaAction" method="altaMesa">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarMesa</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/mesa/altaMesa.jsp</result>
+        </action>
+        
+        <action name="eliminarMesa" class="controller.MesaAction" method="eliminarMesa">
+            <result name="success" type="redirectAction">listarMesa</result>
+        </action>
+        
+        <action name="modificarMesa" class="controller.MesaAction" method="modificarMesa">
+            <result name="success">/vistas/mesa/modificarMesa.jsp</result>
+        </action>
+        
+        <action name="modificarMesaGuardar" class="controller.MesaAction" method="modificarMesaGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarMesa</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->

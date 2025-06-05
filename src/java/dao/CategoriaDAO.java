@@ -34,7 +34,7 @@ public class CategoriaDAO {
     }
 
     public void actualizarCategoria(Categoria c) {
-        Categoria categoria = consultarCamarero(c.getId());
+        Categoria categoria = consultarCategoria(c.getId());
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
         categoria.setNombre(c.getNombre());
@@ -53,7 +53,7 @@ public class CategoriaDAO {
         tx.commit();
     }
 
-    public Categoria consultarCamarero(int id) {
+    public Categoria consultarCategoria(int id) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
         Categoria categoria = (Categoria) session.get(Categoria.class, id);

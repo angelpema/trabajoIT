@@ -6,59 +6,59 @@
 package dao;
 
 import java.util.List;
-import pojos.Camarero;
-import pojos.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojos.HibernateUtil;
+import pojos.Mesa;
 
 /**
  *
- * @author antoniovazqueztorres
+ * @author angel_pe_ma
  */
-public class CamareroDAO {
+public class MesaDAO {
     Session session = null;
 
-    public List<Camarero> listarCamareros() {
+    public List<Mesa> listarMesas() {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        List<Camarero> lista = session.createQuery("from Camarero").list();
+        List<Mesa> lista = session.createQuery("from Mesa").list();
         tx.commit();
         return lista;
     }
     
-    public void crearCamarero(Camarero c) {
+    public void crearMesa(Mesa m) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        session.save(c);
+        session.save(m);
         tx.commit();
     }
 
-    public void actualizarCamarero(Camarero c) {
-        Camarero camarero = consultarCamarero(c.getId());
+    public void actualizarMesa(Mesa m) {
+        Mesa mesa = consultarMesa(m.getId());
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        camarero.setNombre(c.getNombre());
-        camarero.setApellidos(c.getApellidos());
-        camarero.setTurno(c.getTurno());
-        session.update(camarero);
+        mesa.setUbicacion(m.getUbicacion());
+        mesa.setCapacidad(m.getCapacidad());
+        mesa.setEstado(m.getEstado());
+        session.update(mesa);
         tx.commit();
     }
 
-    public void eliminarCamarero(int idCamarero) {
+    public void eliminarMesa(int id) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        Camarero camarero = (Camarero) session.get(Camarero.class, idCamarero);
-        if (camarero != null) {
-            session.delete(camarero);
+        Mesa mesa = (Mesa) session.get(Mesa.class, id);
+        if (mesa != null) {
+            session.delete(mesa);
         }
         tx.commit();
     }
 
-    public Camarero consultarCamarero(int idCamarero) {
+    public Mesa consultarMesa(int id) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        Camarero camarero = (Camarero) session.get(Camarero.class, idCamarero);
+        Mesa mesa = (Mesa) session.get(Mesa.class, id);
         tx.commit();
-        return camarero;
+        return mesa;
     }
 }
