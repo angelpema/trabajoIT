@@ -29,14 +29,12 @@ public class Plato  implements java.io.Serializable {
         this.nombre = nombre;
         this.precio = precio;
     }
-    public Plato(Categoria categoria, String nombre, String descripcion, BigDecimal precio, Boolean disponible, Set comandas, Set platoIngredientes) {
+    public Plato(Categoria categoria, String nombre, String descripcion, BigDecimal precio, Boolean disponible) {
        this.categoria = categoria;
        this.nombre = nombre;
        this.descripcion = descripcion;
        this.precio = precio;
        this.disponible = disponible;
-       this.comandas = comandas;
-       this.platoIngredientes = platoIngredientes;
     }
    
     public Integer getId() {

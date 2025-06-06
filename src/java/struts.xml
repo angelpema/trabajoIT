@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarIngrediente</param>
+                <param name = "actionName">listarPlato</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- _______________________________PLATO____________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarPlato" class = "controller.PlatoAction">
+            <result name = "success">/vistas/plato/plato.jsp</result>
+        </action>
+        
+        <action name="altaPlato" class="controller.PlatoAction" method="altaPlato">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlato</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/plato/altaPlato.jsp</result>
+        </action>
+        
+        <action name="eliminarPlato" class="controller.PlatoAction" method="eliminarPlato">
+            <result name="success" type="redirectAction">listarPlato</result>
+        </action>
+        
+        <action name="modificarPlato" class="controller.PlatoAction" method="modificarPlato">
+            <result name="success">/vistas/plato/modificarPlato.jsp</result>
+        </action>
+        
+        <action name="modificarPlatoGuardar" class="controller.PlatoAction" method="modificarPlatoGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlato</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->

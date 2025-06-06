@@ -7,8 +7,70 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarMesa</param>
+                <param name = "actionName">listarPlato</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- _______________________________PLATO____________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarPlato" class = "controller.PlatoAction">
+            <result name = "success">/vistas/plato/plato.jsp</result>
+        </action>
+        
+        <action name="altaPlato" class="controller.PlatoAction" method="altaPlato">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlato</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/plato/altaPlato.jsp</result>
+        </action>
+        
+        <action name="eliminarPlato" class="controller.PlatoAction" method="eliminarPlato">
+            <result name="success" type="redirectAction">listarPlato</result>
+        </action>
+        
+        <action name="modificarPlato" class="controller.PlatoAction" method="modificarPlato">
+            <result name="success">/vistas/plato/modificarPlato.jsp</result>
+        </action>
+        
+        <action name="modificarPlatoGuardar" class="controller.PlatoAction" method="modificarPlatoGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlato</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ____________________________INGREDIENTE_________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarIngrediente" class = "controller.IngredienteAction">
+            <result name = "success">/vistas/ingrediente/ingrediente.jsp</result>
+        </action>
+        
+        <action name="altaIngrediente" class="controller.IngredienteAction" method="altaIngrediente">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/ingrediente/altaIngrediente.jsp</result>
+        </action>
+        
+        <action name="eliminarIngrediente" class="controller.IngredienteAction" method="eliminarIngrediente">
+            <result name="success" type="redirectAction">listarIngrediente</result>
+        </action>
+        
+        <action name="modificarIngrediente" class="controller.IngredienteAction" method="modificarIngrediente">
+            <result name="success">/vistas/ingrediente/modificarIngrediente.jsp</result>
+        </action>
+        
+        <action name="modificarIngredienteGuardar" class="controller.IngredienteAction" method="modificarIngredienteGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->
