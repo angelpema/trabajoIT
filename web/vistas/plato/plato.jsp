@@ -27,7 +27,7 @@
                 <th>Precio</th>
                 <th>Categoria</th>
                 <th>Disponible</th>
-                <th colspan="2">Acciones</th>
+                <th>Acciones</th>
             </tr>
             <s:iterator value = "listaPlato">
                 <tr>

@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarPlato</param>
+                <param name = "actionName">listarPedido</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- _______________________________PEDIDO___________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarPedido" class = "controller.PedidoAction">
+            <result name = "success">/vistas/pedido/pedido.jsp</result>
+        </action>
+        
+        <action name="altaPedido" class="controller.PedidoAction" method="altaPedido">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPedido</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/pedido/altaPedido.jsp</result>
+        </action>
+        
+        <action name="eliminarPedido" class="controller.PedidoAction" method="eliminarPedido">
+            <result name="success" type="redirectAction">listarPedido</result>
+        </action>
+        
+        <action name="modificarPedido" class="controller.PedidoAction" method="modificarPedido">
+            <result name="success">/vistas/pedido/modificarPedido.jsp</result>
+        </action>
+        
+        <action name="modificarPedidoGuardar" class="controller.PedidoAction" method="modificarPedidoGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPedido</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->

@@ -3,11 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/dao/CategoriaDAO.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/IngredienteAction.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/CategoriaAction.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/dao/CamareroDAO.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/ingrediente/altaIngrediente.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/dao/PedidoDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/mesa/altaMesa.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/struts.xml</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/pedido/altaPedido.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/categoria/categoria.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/pojos/Pedido.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/camarero/camarero.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/ingrediente/ingrediente.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/pedido/modificarPedido.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/PlatoAction.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/mesa/mesa.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/plato/plato.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/PedidoAction.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/plato/altaPlato.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/pedido/pedido.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -14,22 +14,21 @@
             <s:textfield name="nombre" 
                          label="Nombre" 
                          required="true"/>
-            
+
             <s:textfield name="descripcion" 
                          label="Descripción" 
                          required="true"/>
-            
+
             <s:textfield name="precio" 
                          label="Precio" 
                          required="true"/>
-            
-            <s:select 
-                name="categoria.id" 
-                label="Categoría"
-                list="listaCategoria" 
-                listKey="id" 
-                listValue="nombre"
-                required="true"/>
+
+            <s:select name="categoria.id" 
+                      label="Categoría"
+                      list="listaCategoria" 
+                      listKey="id" 
+                      listValue="nombre"
+                      required="true"/>
 
             <s:checkbox name="disponible" label="Disponible"/>
 

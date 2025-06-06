@@ -21,7 +21,7 @@
                 <th>Stock</th>
                 <th>Unidad</th>
                 <th>Umbral de Alerta</th>
-                <th colspan="2">Acciones</th>
+                <th>Acciones</th>
             </tr>
             <s:iterator value = "listaIngrediente">
                 <tr>

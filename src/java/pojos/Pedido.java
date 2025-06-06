@@ -26,13 +26,8 @@ public class Pedido  implements java.io.Serializable {
     public Pedido(Camarero camarero, Mesa mesa) {
         this.camarero = camarero;
         this.mesa = mesa;
-    }
-    public Pedido(Camarero camarero, Mesa mesa, Date fechaHora, String estado, Set comandas) {
-       this.camarero = camarero;
-       this.mesa = mesa;
-       this.fechaHora = fechaHora;
-       this.estado = estado;
-       this.comandas = comandas;
+       this.fechaHora = new Date();
+       this.estado = "pendiente";
     }
    
     public Integer getId() {

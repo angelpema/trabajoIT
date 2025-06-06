@@ -21,7 +21,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Turno</th>
-                <th colspan="2">Acciones</th>
+                <th>Acciones</th>
             </tr>
             <s:iterator value = "listaCamarero">
                 <tr>

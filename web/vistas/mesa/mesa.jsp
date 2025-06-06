@@ -25,7 +25,7 @@
                 <th>Ubicacion</th>
                 <th>Capacidad</th>
                 <th>Estado</th>
-                <th colspan="2">Acciones</th>
+                <th>Acciones</th>
             </tr>
             <s:iterator value = "listaMesa">
                 <tr>
