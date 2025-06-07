@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarAlerta</param>
+                <param name = "actionName">listarPlatoIngrediente</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ________________________PLATO_INGREDIENTE_______________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarPlatoIngrediente" class = "controller.PlatoIngredienteAction">
+            <result name = "success">/vistas/platoIngrediente/platoIngrediente.jsp</result>
+        </action>
+        
+        <action name="altaPlatoIngrediente" class="controller.PlatoIngredienteAction" method="altaPlatoIngrediente">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlatoIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/platoIngrediente/altaPlatoIngrediente.jsp</result>
+        </action>
+        
+        <action name="eliminarPlatoIngrediente" class="controller.PlatoIngredienteAction" method="eliminarPlatoIngrediente">
+            <result name="success" type="redirectAction">listarPlatoIngrediente</result>
+        </action>
+        
+        <action name="modificarPlatoIngrediente" class="controller.PlatoIngredienteAction" method="modificarPlatoIngrediente">
+            <result name="success">/vistas/platoIngrediente/modificarPlatoIngrediente.jsp</result>
+        </action>
+        
+        <action name="modificarPlatoIngredienteGuardar" class="controller.PlatoIngredienteAction" method="modificarPlatoIngredienteGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarPlatoIngrediente</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->

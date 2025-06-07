@@ -32,7 +32,7 @@
 
             <s:select name="mesa.estado"
                       label="Estado"
-                      list="{'libre', 'ocupada', 'resevada'}"
+                      list="{'libre', 'ocupada', 'reservada'}"
                       required="true" 
                       value="%{mesa.estado}"/>
 
