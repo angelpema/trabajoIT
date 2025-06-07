@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarPedido</param>
+                <param name = "actionName">listarComanda</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ______________________________COMANDA___________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarComanda" class = "controller.ComandaAction">
+            <result name = "success">/vistas/comanda/comanda.jsp</result>
+        </action>
+        
+        <action name="altaComanda" class="controller.ComandaAction" method="altaComanda">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarComanda</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/comanda/altaComanda.jsp</result>
+        </action>
+        
+        <action name="eliminarComanda" class="controller.ComandaAction" method="eliminarComanda">
+            <result name="success" type="redirectAction">listarComanda</result>
+        </action>
+        
+        <action name="modificarComanda" class="controller.ComandaAction" method="modificarComanda">
+            <result name="success">/vistas/comanda/modificarComanda.jsp</result>
+        </action>
+        
+        <action name="modificarComandaGuardar" class="controller.ComandaAction" method="modificarComandaGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarComanda</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->
