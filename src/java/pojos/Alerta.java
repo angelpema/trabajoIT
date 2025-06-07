@@ -23,6 +23,8 @@ public class Alerta  implements java.io.Serializable {
     public Alerta(Ingrediente ingrediente, String mensaje) {
         this.ingrediente = ingrediente;
         this.mensaje = mensaje;
+        this.fecha = new Date();
+        this.resuelta = false;
     }
     public Alerta(Ingrediente ingrediente, String mensaje, Date fecha, Boolean resuelta) {
        this.ingrediente = ingrediente;

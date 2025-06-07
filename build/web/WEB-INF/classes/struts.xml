@@ -7,8 +7,39 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarComanda</param>
+                <param name = "actionName">listarAlerta</param>
             </result>     
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- _______________________________ALERTA___________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "listarAlerta" class = "controller.AlertaAction">
+            <result name = "success">/vistas/alerta/alerta.jsp</result>
+        </action>
+        
+        <action name="altaAlerta" class="controller.AlertaAction" method="altaAlerta">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarAlerta</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name = "input">/vistas/alerta/altaAlerta.jsp</result>
+        </action>
+        
+        <action name="eliminarAlerta" class="controller.AlertaAction" method="eliminarAlerta">
+            <result name="success" type="redirectAction">listarAlerta</result>
+        </action>
+        
+        <action name="modificarAlerta" class="controller.AlertaAction" method="modificarAlerta">
+            <result name="success">/vistas/alerta/modificarAlerta.jsp</result>
+        </action>
+        
+        <action name="modificarAlertaGuardar" class="controller.AlertaAction" method="modificarAlertaGuardar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listarAlerta</param>
+                <param name="namespace">/</param>
+            </result>
         </action>
         
         <!-- ________________________________________________________________________ -->
