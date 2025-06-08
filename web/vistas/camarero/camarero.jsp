@@ -1,47 +1,79 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix = "s" uri="/struts-tags"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8" />
         <title>Camareros</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
-    <body>
-        <h1>Camareros</h1>
-        
-        <s:form action="altaCamarero">
-            <s:submit value="Alta Camarero"/>
-        </s:form>
+    <body style="background: #f8f9fa;">
 
-        <table border=1 cellspacing=1 cellpadding=2>
-            <tr>
-                <th>Id</th>
-                <th>Dni</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Turno</th>
-                <th>Acciones</th>
-            </tr>
-            <s:iterator value = "listaCamarero">
-                <tr>
-                    <td><s:property value = "id" /></td>
-                    <td><s:property value = "dni" /></td>
-                    <td><s:property value = "nombre" /></td>
-                    <td><s:property value = "apellidos" /></td>
-                    <td><s:property value = "turno" /></td>
-                    <td>
-                        <s:form action="eliminarCamarero" method="post">
-                            <s:hidden name="id" value="%{id}"/>
-                            <s:submit value="Eliminar" onclick="return confirm('¿Está seguro de eliminar este camarero?');"/>
-                        </s:form>
-                        <s:form action="modificarCamarero" method="post">
-                            <s:hidden name="id" value="%{id}"/>
-                            <s:submit value="Modificar"/>
-                        </s:form>
-                    </td>
-                </tr>
-            </s:iterator>
-        </table>
+        <div class="container my-5">
+            <h1 class="mb-4 text-center fw-bold">Camareros</h1>
+
+            <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <s:form action="index" method="post" style="margin:0;">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left-circle me-2"></i> Volver al panel de gestión
+                    </button>
+                </s:form>
+                
+                <s:form action="altaCamarero" style="margin:0;">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-plus-circle me-2"></i> Nuevo Camarero
+                    </button>
+                </s:form>
+            </div>
+
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-striped table-hover align-middle bg-white">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Turno</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <s:iterator value="listaCamarero">
+                            <tr>
+                                <td><s:property value="id"/></td>
+                                <td><s:property value="dni"/></td>
+                                <td><s:property value="nombre"/></td>
+                                <td><s:property value="apellidos"/></td>
+                                <td><s:property value="turno"/></td>
+                                <td class="text-nowrap">
+                                    <div class="d-flex gap-2">
+                                        <s:form action="modificarCamarero" method="post" style="margin:0;">
+                                            <s:hidden name="id" value="%{id}"/>
+                                            <button type="submit" class="btn btn-sm btn-warning" title="Modificar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </s:form>
+
+                                        <s:form action="eliminarCamarero" method="post" style="margin:0;">
+                                            <s:hidden name="id" value="%{id}"/>
+                                            <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"
+                                                    onclick="return confirm('¿Está seguro de eliminar este camarero?');">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </s:form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </s:iterator>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bootstrap Icons & JS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

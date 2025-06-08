@@ -7,8 +7,12 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">listarPlatoIngrediente</param>
+                <param name = "actionName">index</param>
             </result>     
+        </action>
+        
+        <action name="index">
+            <result>/vistas/general/index.jsp</result>
         </action>
         
         <!-- ________________________________________________________________________ -->

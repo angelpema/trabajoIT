@@ -1,44 +1,75 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix = "s" uri="/struts-tags"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Modificar Ingrediente</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     </head>
-    <body>
+    <body class="bg-light">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title mb-0">
+                                <i class="bi bi-box-seam"></i> Modificar Ingrediente
+                            </h3>
+                        </div>
+                        <div class="card-body">
 
-        <h1>Modificar Ingrediente</h1>
+                            <s:form action="listarIngrediente" method="post" style="margin:0;">
+                                <button type="submit" class="btn btn-secondary mb-3">
+                                    <i class="bi bi-arrow-left-circle me-2"></i> Volver a Ingredientes
+                                </button>
+                            </s:form>
 
-        <s:form action="modificarIngredienteGuardar" method="post">
+                            <br><br>
 
-            <s:hidden name="ingrediente.id" value="%{ingrediente.id}"/>
+                            <s:form action="modificarIngredienteGuardar" method="post" theme="simple">
 
-            <s:textfield name="ingrediente.nombre"
-                         label="Nombre"
-                         required="true" 
-                         value="%{ingrediente.nombre}"/>
+                                <s:hidden name="ingrediente.id" value="%{ingrediente.id}" />
 
-            <s:textfield name="ingrediente.stock"
-                         label="Stock"
-                         required="true" 
-                         value="%{ingrediente.stock}"/>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <s:textfield name="ingrediente.nombre" id="nombre" cssClass="form-control" 
+                                                 required="true" value="%{ingrediente.nombre}" />
+                                </div>
 
-            <s:textfield name="ingrediente.unidad"
-                         label="Unidad"
-                         required="true" 
-                         value="%{ingrediente.unidad}"/>
+                                <div class="mb-3">
+                                    <label for="stock" class="form-label">Stock</label>
+                                    <s:textfield name="ingrediente.stock" id="stock" cssClass="form-control" 
+                                                 required="true" value="%{ingrediente.stock}" />
+                                </div>
 
-            <s:textfield name="ingrediente.umbralAlerta"
-                         label="Umbral De Alerta"
-                         required="true" 
-                         value="%{ingrediente.umbralAlerta}"/>
+                                <div class="mb-3">
+                                    <label for="unidad" class="form-label">Unidad</label>
+                                    <s:textfield name="ingrediente.unidad" id="unidad" cssClass="form-control" 
+                                                 required="true" value="%{ingrediente.unidad}" />
+                                </div>
 
-            <s:submit value="Guardar"/>
-        </s:form>
-        
-        <s:form action="listarIngrediente">
-            <s:submit value="Volver"/>
-        </s:form>
+                                <div class="mb-3">
+                                    <label for="umbralAlerta" class="form-label">Umbral de Alerta</label>
+                                    <s:textfield name="ingrediente.umbralAlerta" id="umbralAlerta" cssClass="form-control" 
+                                                 required="true" value="%{ingrediente.umbralAlerta}" />
+                                </div>
+
+                                <div class="d-grid d-md-flex justify-content-md-end">
+                                    <s:submit value="Guardar" cssClass="btn btn-primary me-md-2" />
+                                </div>
+
+                            </s:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

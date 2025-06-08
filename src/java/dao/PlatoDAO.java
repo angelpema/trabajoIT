@@ -30,6 +30,9 @@ public class PlatoDAO {
     public void crearPlato(Plato p) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
+        if (p.getDisponible() == null) {
+            p.setDisponible(false);
+        }
         session.save(p);
         tx.commit();
     }
@@ -42,7 +45,11 @@ public class PlatoDAO {
         plato.setDescripcion(p.getDescripcion());
         plato.setPrecio(p.getPrecio());
         plato.setCategoria(p.getCategoria());
-        plato.setDisponible(p.getDisponible());
+        if (p.getDisponible() == null) {
+            plato.setDisponible(false);
+        }else{
+            plato.setDisponible(true);
+        }
         session.update(plato);
         tx.commit();
     }

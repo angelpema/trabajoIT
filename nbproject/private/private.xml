@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Desktop/Angel1/web/vistas/mesa/modificarMesa.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/Angel1/web/vistas/mesa/altaMesa.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/Angel1/web/vistas/mesa/mesa.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/categoria/modificarCategoria.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/comanda/altaComanda.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/ComandaAction.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/comanda/modificarComanda.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/dao/ComandaDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/platoIngrediente/altaPlatoIngrediente.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/alerta/modificarAlerta.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/plato/altaPlato.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/camarero/modificarCamarero.jsp</file>
         </group>
     </open-files>
 </project-private>

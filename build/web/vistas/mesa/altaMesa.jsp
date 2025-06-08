@@ -1,36 +1,63 @@
-<%-- 
-    Document   : altaMesa
-    Created on : 05-jun-2025, 12:39:27
-    Author     : angel_pe_ma
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix = "s" uri="/struts-tags"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alta Mesa</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     </head>
-        <body>
+    <body class="bg-light">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title mb-0">
+                                <i class="bi bi-table"></i> Alta de Mesa
+                            </h3>
+                        </div>
+                        <div class="card-body">
 
-        <h1>Alta Mesa</h1>
+                            <s:form action="listarMesa" method="post" style="margin:0;">
+                                <button type="submit" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-left-circle me-2"></i> Volver a Mesas
+                                </button>
+                            </s:form>
 
-        <s:form action="altaMesa" method="post">
+                            <br><br>
 
-            <s:textfield name="ubicacion"
-                         label="Ubicacion"
-                         required="true" />
+                            <s:form action="altaMesa" method="post" theme="simple">
+                                <div class="mb-3">
+                                    <label for="ubicacion" class="form-label">Ubicación</label>
+                                    <s:textfield name="ubicacion"
+                                                 id="ubicacion"
+                                                 cssClass="form-control"
+                                                 required="true" />
+                                </div>
 
-            <s:textfield name="capacidad"
-                         label="Capacidad"
-                         required="true" />
+                                <div class="mb-4">
+                                    <label for="capacidad" class="form-label">Capacidad</label>
+                                    <s:textfield name="capacidad"
+                                                 id="capacidad"
+                                                 cssClass="form-control"
+                                                 required="true" />
+                                </div>
 
-            <s:submit value="Guardar"/>
-        </s:form>
-        
-        <s:form action="listarMesa">
-            <s:submit value="Volver"/>
-        </s:form>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <s:submit value="Guardar" cssClass="btn btn-primary me-md-2" />
+                                </div>
+                            </s:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

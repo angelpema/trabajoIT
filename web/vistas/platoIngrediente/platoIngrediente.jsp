@@ -1,47 +1,76 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Platos e Ingredientes</title>
-</head>
-<body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Platos - Ingredientes</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body style="background: #f8f9fa;">
 
-    <h1>Platos - Ingredientes</h1>
+        <div class="container my-5">
+            <h1 class="mb-4 text-center fw-bold">Platos - Ingredientes</h1>
 
-    <s:form action="altaPlatoIngrediente">
-        <s:submit value="Añadir ingrediente a plato"/>
-    </s:form>
+            <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <s:form action="index" method="post" style="margin:0;">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left-circle me-2"></i> Volver al panel de gestión
+                    </button>
+                </s:form>
+                
+                <s:form action="altaPlatoIngrediente" style="margin:0;">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-plus-circle me-2"></i> Añadir ingrediente a plato
+                    </button>
+                </s:form>
+            </div>
 
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>ID</th>
-            <th>Plato</th>
-            <th>Ingrediente</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-striped table-hover align-middle bg-white">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Plato</th>
+                            <th>Ingrediente</th>
+                            <th>Cantidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <s:iterator value="listaPlatoIngrediente">
+                            <tr>
+                                <td><s:property value="id" /></td>
+                                <td><s:property value="plato.nombre" /></td>
+                                <td><s:property value="ingrediente.nombre" /></td>
+                                <td><s:property value="cantidad" /></td>
+                                <td class="text-nowrap">
+                                    <div class="d-flex gap-2">
+                                        <s:form action="modificarPlatoIngrediente" method="post" style="margin:0;">
+                                            <s:hidden name="id" value="%{id}" />
+                                            <button type="submit" class="btn btn-sm btn-warning" title="Modificar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </s:form>
+                                        <s:form action="eliminarPlatoIngrediente" method="post" style="margin:0;">
+                                            <s:hidden name="id" value="%{id}" />
+                                            <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"
+                                                    onclick="return confirm('¿Seguro que desea eliminar este registro?');">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </s:form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </s:iterator>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-        <s:iterator value="listaPlatoIngrediente">
-            <tr>
-                <td><s:property value="id" /></td>
-                <td><s:property value="plato.nombre" /></td>
-                <td><s:property value="ingrediente.nombre" /></td>
-                <td><s:property value="cantidad" /></td>
-                <td>
-                    <s:form action="eliminarPlatoIngrediente" method="post">
-                        <s:hidden name="id" value="%{id}" />
-                        <s:submit value="Eliminar" onclick="return confirm('¿Seguro que desea eliminar este registro?');" />
-                    </s:form>
-                    <s:form action="modificarPlatoIngrediente" method="post">
-                        <s:hidden name="id" value="%{id}" />
-                        <s:submit value="Modificar" />
-                    </s:form>
-                </td>
-            </tr>
-        </s:iterator>
-    </table>
-
-</body>
+        <!-- Bootstrap Icons & JS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
