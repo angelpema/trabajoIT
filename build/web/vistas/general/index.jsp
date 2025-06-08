@@ -65,6 +65,14 @@
 
         <main class="container">
 
+            <div class="mb-3">
+                <s:form action="vistaIndex" method="post">
+                    <button class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver al Panel Inicial
+                    </button>
+                </s:form>
+            </div>
+
             <h1>Bienvenido a la página de gestión del TPV</h1>
 
             <div class="row g-4 justify-content-center">

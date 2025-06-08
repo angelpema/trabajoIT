@@ -32,10 +32,11 @@
                             <s:form action="altaMesa" method="post" theme="simple">
                                 <div class="mb-3">
                                     <label for="ubicacion" class="form-label">Ubicación</label>
-                                    <s:textfield name="ubicacion"
-                                                 id="ubicacion"
-                                                 cssClass="form-control"
-                                                 required="true" />
+                                    <s:select name="ubicacion"
+                                              id="ubicacion"
+                                              cssClass="form-select"
+                                              list="{'Interior','Terraza'}"
+                                              required="true" />
                                 </div>
 
                                 <div class="mb-4">

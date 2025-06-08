@@ -10,14 +10,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pojos.Comanda;
 import pojos.HibernateUtil;
+import pojos.Mesa;
 
 /**
  *
  * @author angel_pe_ma
  */
 public class ComandaDAO {
+
     Session session = null;
-    
+
     public List<Comanda> listarComandas() {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
@@ -25,7 +27,7 @@ public class ComandaDAO {
         tx.commit();
         return lista;
     }
-    
+
     public void crearComanda(Comanda c) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
@@ -62,4 +64,13 @@ public class ComandaDAO {
         tx.commit();
         return comanda;
     }
+    
+    public List<Comanda> cargarPlatosPedidos(Mesa mesa){
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        List<Comanda> lista = session.createQuery("from Comanda c JOIN FETCH c.pedido cp JOIN FETCH c.plato JOIN FETCH cp.mesa cpm WHERE cpm.id="+mesa.getId()).list();
+        tx.commit();
+        return lista;
+    }
+
 }

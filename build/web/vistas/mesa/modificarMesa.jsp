@@ -35,8 +35,12 @@
 
                                 <div class="mb-3">
                                     <label for="ubicacion" class="form-label">Ubicación</label>
-                                    <s:textfield name="mesa.ubicacion" id="ubicacion" cssClass="form-control" 
-                                                 required="true" value="%{mesa.ubicacion}" />
+                                    <s:select name="mesa.ubicacion"
+                                              id="ubicacion"
+                                              cssClass="form-select"
+                                              list="{'Interior','Terraza'}"
+                                              required="true" 
+                                              value="%{mesa.ubicacion}" />
                                 </div>
 
                                 <div class="mb-3">

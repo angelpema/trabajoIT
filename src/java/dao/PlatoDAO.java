@@ -47,7 +47,7 @@ public class PlatoDAO {
         plato.setCategoria(p.getCategoria());
         if (p.getDisponible() == null) {
             plato.setDisponible(false);
-        }else{
+        } else {
             plato.setDisponible(true);
         }
         session.update(plato);
@@ -70,5 +70,13 @@ public class PlatoDAO {
         Plato plato = (Plato) session.get(Plato.class, id);
         tx.commit();
         return plato;
+    }
+
+    public List<Plato> listarPlatoCategoria(int id) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        List<Plato> lista = session.createQuery("FROM Plato p JOIN FETCH p.categoria c WHERE c.id = "+id).list();
+        tx.commit();
+        return lista;
     }
 }

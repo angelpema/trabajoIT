@@ -8,7 +8,9 @@ package dao;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojos.Camarero;
 import pojos.HibernateUtil;
+import pojos.Mesa;
 import pojos.Pedido;
 
 /**
@@ -59,5 +61,29 @@ public class PedidoDAO {
         Pedido pedido = (Pedido) session.get(Pedido.class, id);
         tx.commit();
         return pedido;
+    }
+
+    public Pedido buscarMesaPedido(int id) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Pedido pedido = (Pedido) session.createQuery("FROM Pedido p JOIN FETCH p.mesa JOIN FETCH p.camarero WHERE p.mesa.id=" + id).uniqueResult();
+        tx.commit();
+        if (pedido != null) {
+            return pedido;
+        } else {
+
+            CamareroDAO c = new CamareroDAO();
+            MesaDAO m = new MesaDAO();
+
+            Camarero camarero = c.consultarCamarero(1);
+            Mesa mesa = m.consultarMesa(id);
+            pedido = new Pedido(camarero, mesa);
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            tx = session.beginTransaction();
+            session.save(pedido);
+            tx.commit();
+            return pedido;
+        }
+
     }
 }

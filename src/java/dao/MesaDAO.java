@@ -16,6 +16,7 @@ import pojos.Mesa;
  * @author angel_pe_ma
  */
 public class MesaDAO {
+
     Session session = null;
 
     public List<Mesa> listarMesas() {
@@ -25,7 +26,7 @@ public class MesaDAO {
         tx.commit();
         return lista;
     }
-    
+
     public void crearMesa(Mesa m) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
@@ -60,5 +61,21 @@ public class MesaDAO {
         Mesa mesa = (Mesa) session.get(Mesa.class, id);
         tx.commit();
         return mesa;
+    }
+
+    public List<Mesa> listarMesasInterior() {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        List<Mesa> lista = session.createQuery("from Mesa WHERE ubicacion='Interior'").list();
+        tx.commit();
+        return lista;
+    }
+
+    public List<Mesa> listarMesasTerraza() {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        List<Mesa> lista = session.createQuery("from Mesa WHERE ubicacion='Terraza'").list();
+        tx.commit();
+        return lista;
     }
 }

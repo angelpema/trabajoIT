@@ -7,9 +7,49 @@
     <package name="default" extends="struts-default">
         <action name = "">
             <result type = "chain">
-                <param name = "actionName">index</param>
+                <param name = "actionName">vistaIndex</param>
             </result>     
         </action>
+        
+        <action name = "vistaIndex">
+            <result name = "success">/vistas/general/vistaIndex.jsp</result>
+        </action>
+
+        <!-- ________________________________________________________________________ -->
+        <!-- _____________________________TPV________________________________________ -->
+        <!-- ________________________________________________________________________ -->
+        
+        <action name = "tpvMesas" class = "controller.TpvAction">
+            <result name = "success">/vistas/tpv/tpvMesas.jsp</result>
+        </action>
+        
+        <action name="tpvMesaSeleccionada" class="controller.TpvAction" method="tpvMesaSeleccionada">
+            <result name="success">/vistas/tpv/tpv.jsp</result>
+        </action>
+
+        <action name="tpvCategoriaSeleccionada" class="controller.TpvAction" method="tpvCategoriaSeleccionada">
+            <result name="success">/vistas/tpv/tpvPlatos.jsp</result>
+        </action>
+
+        <action name="agregarAlPedido" class="controller.TpvAction" method="agregarAlPedido">
+            <result name="success">/vistas/tpv/tpvPlatos.jsp</result>
+        </action>
+
+        <action name="eliminarDelPedidoPlatos" class="controller.TpvAction" method="eliminarDelPedidoPlato">
+            <result name="success">/vistas/tpv/tpvPlatos.jsp</result>
+        </action>
+
+        <action name="eliminarDelPedido" class="controller.TpvAction" method="eliminarDelPedido">
+            <result name="success">/vistas/tpv/tpv.jsp</result>
+        </action>
+
+        <action name="confirmarPedido" class="controller.TpvAction" method="confirmarPedido">
+            <result name="success">/vistas/tpv/tpvConfirmar.jsp</result>
+        </action>
+        
+        <!-- ________________________________________________________________________ -->
+        <!-- ______________________VISTA_ADMINISTRADOR_______________________________ -->
+        <!-- ________________________________________________________________________ -->
         
         <action name="index">
             <result>/vistas/general/index.jsp</result>

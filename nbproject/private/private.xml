@@ -3,15 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/categoria/modificarCategoria.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/comanda/altaComanda.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/controller/ComandaAction.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/comanda/modificarComanda.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/src/java/dao/ComandaDAO.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/platoIngrediente/altaPlatoIngrediente.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/alerta/modificarAlerta.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/plato/altaPlato.jsp</file>
-            <file>file:/C:/Users/Usuario/Desktop/trabajoIT/web/vistas/camarero/modificarCamarero.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/general/vistaIndex.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/tpv/tpv.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/controller/TpvAction.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/tpv/tpvConfirmar.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/tpv/tpvPlatos.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/tpv/tpvMesas.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/dao/PedidoDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/web/vistas/general/index.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/dao/ComandaDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/pojos/Plato.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/struts.xml</file>
+            <file>file:/C:/Users/Usuario/Desktop/Bootstrap-1/src/java/pojos/Comanda.java</file>
         </group>
     </open-files>
 </project-private>
